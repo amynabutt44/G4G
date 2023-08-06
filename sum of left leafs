@@ -1,0 +1,22 @@
+// left leaf nodes
+ void helper( Node * root , int & sum ,int flag)
+ {
+     if(root== nullptr)
+     {
+         return ;
+     }
+      
+      helper(root->left, sum ,1);
+      if(!root->left && !root->right && flag ==1)
+      {
+          sum+=root->data;
+      }
+      helper(root->right, sum ,0);
+ }
+int leftLeavesSum(Node *root)
+{
+    int sum =0;
+    int flag=0;
+     helper(root, sum,flag);
+     return sum;
+}
