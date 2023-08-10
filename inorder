@@ -1,0 +1,11 @@
+ vector<int> result;
+    vector<int> inOrder(Node* root) {
+        if(root == nullptr)
+        {
+            return  {};
+        }
+         inOrder(root->left);
+         result.push_back(root->data);
+         inOrder(root->right);
+         return result;
+    }
