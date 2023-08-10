@@ -1,0 +1,13 @@
+  vector<int> result;
+vector <int> postOrder(Node* root)
+{
+   if(root == nullptr)
+        {
+            return  {};
+        }
+         postOrder(root->left);
+       
+         postOrder(root->right);
+          result.push_back(root->data);
+         return result;
+}
